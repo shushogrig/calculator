@@ -1,0 +1,104 @@
+<html>
+<head>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+<title>calculator</title>
+<style type="text/css">
+ .calculator {
+    width: 250px;
+    height: 350px;
+    margin: 100px auto 0;
+    text-align: center;
+    background-color: #3a3838;
+    box-shadow: 0 0 30px grey;
+    border-radius: 4px;
+}
+.calculator-form {
+    height: 100%;
+    padding: 20px;
+}
+
+.row {
+    margin: 10px 0;
+    display: flex;
+    
+}
+
+.display {
+    margin: 0 0 20px;
+    width: 100%;
+    border: 1px solid #3a3838;
+    padding: 4px 2px;
+    text-align: right;
+    color: #3a3838;
+    background-color: #fff;
+}
+
+.key {
+    width: 41px;
+    height: 35px;
+    cursor: pointer;
+    border: none;
+    margin-right: 11px;
+    transition: all .2s;
+    text-transform: uppercase;
+}
+
+.equal {
+    width: 98px;
+}
+
+.key:hover {
+    background-color: #7c1a1a;
+    font-weight: 700;
+    color:#fff;
+}
+
+
+</style>
+</head>
+
+<body>
+  <script src="calc.js">
+</script>
+  <div class="calculator">
+    <form class="calculator-form">
+        <div class="row">
+            <input class="out-display" id="out-display" type="text" disabled="true" />
+        </div>
+        <div class="row">
+            <input class="display" id="display" type="number"  />
+        </div>
+        <div class="row">
+            <button type="button" value="c" class="key clear">C</button>
+            <button type="button" value="<--" class="key backspace"><-</button>
+            <button type="button" value="^3" class="key power">^</button>
+            <button type="button" value="+" class="key operator">+</button>
+        </div>
+        <div class="row">
+            <button type="button" value="9" class="key button">9</button>
+            <button type="button" value="8" class="key button">8</button>
+            <button type="button" value="7" class="key button">7</button>
+            <button type="button" value="-" class="key operator">-</button>
+        </div>
+        <div class="row">
+            <button type="button" value="6" class="key button">6</button>
+            <button type="button" value="5" class="key button">5</button>
+            <button type="button" value="4" class="key button">4</button>
+            <button type="button" value="*" class="key operator">*</button>
+        </div>
+        <div class="row">
+            <button type="button" value="3" class="key button">3</button>
+            <button type="button" value="2" class="key button">2</button>
+            <button type="button" value="1" class="key button">1</button>
+            <button type="button" value="/" class="key operator">/</button>
+        </div>
+        <div class="row">
+            <button type="button" value="0" class="key button">0</button>
+            <button type="button" value="." class="key button">.</button>
+            <button type="button" value="=" class="key button equal">=</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
+
