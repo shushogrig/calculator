@@ -13,25 +13,64 @@ $(document).ready(function () {
     var summa = 0;
     var operand;
     var btnoperator = false;
+    var a;
+    calcClear.on('click', function (){
+        calcDisplay.val('');
+        calcOutDisplay.val('');
+    });
     calcButton.on('click', function () {
+
         calcDisplay.val( calcDisplay.val() + $(this).attr('value') );
-        operand = Number(calcDisplay.val());
+        
+        console.log('LLL', calcDisplay.val())
+       /* operand = Number(calcDisplay.val(s));
         if(btnoperator && operator=='+'){
            summa += operand
            console.log('btnoperator',btnoperator,operator)
-        }
+        }*/
     });
-
     calcOperator.on('click', function () {
-        calcDisplay.val('');
-        btnoperator = true;
+        btnoperator=true;
+        console.log('aaaa',calcDisplay.val())
+        var a=calcDisplay.val()
         var operator =$(this).attr('value')
-        calcOutDisplay.val(operand + $(this).attr('value'));
+        console.log('ass',a,operator)
+        calcOutDisplay.val(calcDisplay.val()+  $(this).attr('value'));
+        calcDisplay.val('');
+        calcEqual.on('click', function (){
+            if( operator == '*'){
+                calcOutDisplay.val(a*calcDisplay.val())
+                 calcDisplay.val('');
+                console.log('ss',a*calcDisplay.val())
+            }
+            if( operator == '+'){
 
-        console.log(operand);
+                var sum= 1*a+Number(calcDisplay.val())
+                calcOutDisplay.val(sum)
+                 calcDisplay.val('');
+                console.log('ss',sum)
+            }
+            if( operator == '-'){
+                calcOutDisplay.val(a-calcDisplay.val())
+                 calcDisplay.val('');
+                console.log('ss',a-calcDisplay.val())
+            }
+            if( operator == '/'){
+                calcOutDisplay.val(a/calcDisplay.val())
+                 calcDisplay.val('');
+                console.log('ss',a/calcDisplay.val())
+            }
+            if( operator == '^'){
+                calcOutDisplay.val(Math.pow(a,calcDisplay.val()))
+                calcDisplay.val('');
+                console.log('ss',(Math.pow(a,calcDisplay.val())))
+            }
+        })
+        console.log('calcDisplay.val',calcDisplay.val())
+        console.log('operator',operator);
         console.log(summa); 
     });
-    
+    console.log('btnoperator,',btnoperator)
     function sum(a,b) {
       return a+b;
     }
